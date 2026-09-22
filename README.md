@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# My Looker Custom Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Looker custom visualization built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+This repository accompanies the Medium series **“When DE assigned to develop Looker Custom Visualization”**, where I walk through the process of building a custom visualization from local development to running it in Looker.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What this project covers
 
-## React Compiler
+- Setting up a React + TypeScript project for Looker custom visualizations
+- Building a configurable table visualization
+- Connecting the visualization to Looker's Visualization API
+- Bundling the visualization into a UMD file
+- Registering and running the visualization in Looker
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+└── visualizations/
+    └── my-table/
+        ├── components/
+        │   └── MyTable.tsx      # Visualization component
+        ├── looker-viz.tsx       # Looker Visualization API entry point
+        ├── data-transformer.ts  # Transforms Looker query data for the component
+        ├── mockData.ts          # Mock data for local development
+        ├── options.ts           # Visualization configuration options
+        └── types.ts             # Shared TypeScript types
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [Node.js](https://nodejs.org/)
+- Yarn
+
+```bash
+npm install --global yarn
 ```
+
+Install dependencies:
+
+```bash
+yarn install
+```
+
+Run the project locally:
+
+```bash
+yarn dev
+```
+
+Build the Looker visualization bundle:
+
+```bash
+yarn build
+```
+
+The bundled visualization will be generated in the `dist/` directory.
+
+## Medium Series
+
+Read the full series:
+
+1. Part 1 — [Setting Up the Project](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-1-how-it-works-cd5fc2579151)
+2. Part 2 — [Building the Foundation](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-2-project-structure-19ad7ee17dc7)
+3. Part 3 — [Building the Real Visualization](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-3-building-the-real-visualization-575c5cb7b7d7)
+4. Part 4 — [Connecting to Looker](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-4-connecting-to-looker-9d9c2ccc6725?postPublishedType=repub#d312)
+
+## Note
+
+This repository is intentionally kept simple to make the concepts in the series easier to follow. It is a learning example rather than a production-ready visualization framework.
