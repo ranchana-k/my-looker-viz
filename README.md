@@ -65,7 +65,7 @@ Read the full series:
 1. Part 1 — [Setting Up the Project](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-1-how-it-works-cd5fc2579151)
 2. Part 2 — [Building the Foundation](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-2-project-structure-19ad7ee17dc7)
 3. Part 3 — [Building the Real Visualization](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-3-building-the-real-visualization-575c5cb7b7d7)
-4. Part 4 — [Connecting to Looker](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-4-connecting-to-looker-9d9c2ccc6725?postPublishedType=repub#d312)
+4. Part 4 — [Connecting to Looker](https://medium.com/@jb.ranchana/when-de-assigned-to-develop-looker-custom-visualization-part-4-connecting-to-looker-9d9c2ccc6725)
 
 ## Note
 
